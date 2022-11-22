@@ -15,7 +15,7 @@ def kaitou():
                 break
             elif a2 in kessonmoji:
                 print("正解です")
-            break
+                break
         else:
             print("不正解です。またチャレンジしてください")
             break
