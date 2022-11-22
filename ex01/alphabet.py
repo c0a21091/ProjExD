@@ -10,17 +10,17 @@ def kaitou():
             print("正解です。それでは、具体的に欠損文字を１つずつ入力してください")
             for f in range(kesson):
                 a2 = input(f"{f+1}つ目の文字を入力してください：")
-            if a2 not in kessonmoji:
-                print("不正解です")
-                break
-            elif a2 in kessonmoji:
-                print("正解です")
-                break
+                if a2 not in kessonmoji:
+                    print("不正解です")
+                    break
+                elif a2 in kessonmoji:
+                    print("正解です")
+                    break
         else:
             print("不正解です。またチャレンジしてください")
             break
 if  __name__ == "__main__":
-    moji = [chr(i)for i in range(ord("a"),ord("z")-1)]
+    moji = [chr(ord("a")+i) for i in range(26)]
     random.shuffle(moji)
     kesson = random.randint(1,9)
     hyouji=10-kesson
