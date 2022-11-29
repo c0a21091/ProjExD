@@ -50,12 +50,13 @@ root.geometry("600x560")         #画面サイズ
 entry = tk.Entry(root, width=10, font=(", 40"),justify="right")
 entry.grid(row=0, column=0, columnspan=3)                       #位置設定
 
+c_list = ["#FA8072", "#CD5C5C", "#A260BF"] #色のリスト
 r, c = 4, 0
 numbers = list(range(0,10,+1))
 numbers.insert(1, ".")
 numbers.insert(2,"")
 for i, num in enumerate(numbers, 1):
-    btn = tk.Button(root, text = f"{num}",font=("Times New Roman", 30), width=4, height=2)
+    btn = tk.Button(root, text = f"{num}",font=("Times New Roman", 30), width=4, height=2, bg=c_list[0])
     btn.bind("<1>",click_number)
     btn.grid(row = r, column = c)
     c += 1
@@ -63,37 +64,37 @@ for i, num in enumerate(numbers, 1):
         r -= 1
         c = 0
 
-btn = tk.Button(root,text = "=",font = ("Times", 30), width=4, height=2, bg="#FA8072")
+btn = tk.Button(root,text = "=",font = ("Times", 30), width=4, height=2, bg=c_list[1])
 btn.bind("<1>",click_equal)
 btn.grid(row = 4, column = 4)
 
-btn = tk.Button(root,text="AC",font=("Times", 30), width=4, height=2, bg="#CD5C5C")
+btn = tk.Button(root,text="AC",font=("Times", 30), width=4, height=2, bg=c_list[2])
 btn.bind("<1>",click_AC)
 btn.grid(row = 1, column = 4)
 
 
 
-btn = tk.Button(root,text="%",font=("Times", 30), width=4, height=2, bg="#FA8072")
+btn = tk.Button(root,text="%",font=("Times", 30), width=4, height=2, bg=c_list[1])
 btn.bind("<1>",click_percent)
 btn.grid(row = 1, column = 5)
 
-btn = tk.Button(root,text = "+/-",font=("Times", 30), width=4, height=2, bg="#FA8072")
+btn = tk.Button(root,text = "+/-",font=("Times", 30), width=4, height=2, bg=c_list[1])
 btn.bind("<1>",click_hanten)
 btn.grid(row = 2, column = 6)
 
-btn = tk.Button(root,text = "+",font=("Times", 30), width=4, height=2, bg="#FA8072")
+btn = tk.Button(root,text = "+",font=("Times", 30), width=4, height=2, bg=c_list[1])
 btn.bind("<1>",click_number)
 btn.grid(row = 2, column = 4)
-btn = tk.Button(root,text = "-",font=("Times", 30), width=4, height=2, bg="#FA8072")
+btn = tk.Button(root,text = "-",font=("Times", 30), width=4, height=2, bg=c_list[1])
 btn.bind("<1>",click_number)
 btn.grid(row = 3, column = 4)
-btn = tk.Button(root,text = "*",font=("Times", 30), width=4, height=2, bg="#FA8072")
+btn = tk.Button(root,text = "*",font=("Times", 30), width=4, height=2, bg=c_list[1])
 btn.bind("<1>",click_number)
 btn.grid(row = 2, column = 5)
-btn = tk.Button(root,text = "/",font=("Times", 30), width=4, height=2, bg="#FA8072")
+btn = tk.Button(root,text = "/",font=("Times", 30), width=4, height=2, bg=c_list[1])
 btn.bind("<1>",click_number)
 btn.grid(row = 3, column = 5)
-btn = tk.Button(root,text = "**",font=("Times", 30), width=4, height=2, bg="#FA8072")
+btn = tk.Button(root,text = "**",font=("Times", 30), width=4, height=2, bg=c_list[1])
 btn.bind("<1>",click_number)
 btn.grid(row = 1, column = 6)
 
