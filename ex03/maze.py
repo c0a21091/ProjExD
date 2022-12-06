@@ -24,12 +24,12 @@ def main_proc():
         if key == "Up": my += 1
         if key == "Down": my -= 1
         if key == "Left": mx += 1
-        if key == "Right": mx -= 1
+        if key == "Right": mx -= 1     
+    cx, cy = mx*100+50, my*100+50
+    canvas.coords("kokaton", cx, cy)
     if mx == 13 and my == 7:                      #ゴールしたら
         tkm.showinfo("goal", f"所要時間：{tmr/10}秒\nゴールしました。")
         root.mainloop()        
-    cx, cy = mx*100+50, my*100+50
-    canvas.coords("kokaton", cx, cy)
     root.after(100, main_proc)
     
 
