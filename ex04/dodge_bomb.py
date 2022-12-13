@@ -21,7 +21,6 @@ def main():
     global obj_rct, scr_rct, start
     start = datetime.today()  # 開始時刻を取得
     clock =pg.time.Clock()
-    # 練習１
     pg.display.set_caption("逃げろ！こうかとん")
     scrn_sfc = pg.display.set_mode((1500, 800))
     scrn_rct = scrn_sfc.get_rect()
