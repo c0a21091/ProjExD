@@ -23,7 +23,7 @@ def main():
     clock =pg.time.Clock()
     # 練習１
     pg.display.set_caption("逃げろ！こうかとん")
-    scrn_sfc = pg.display.set_mode((1600, 900))
+    scrn_sfc = pg.display.set_mode((1500, 800))
     scrn_rct = scrn_sfc.get_rect()
     pgbg_sfc = pg.image.load("fig/pg_bg.jpg")
     pgbg_rct = pgbg_sfc.get_rect()
@@ -96,7 +96,6 @@ def main():
 
         # 練習８
         if tori_rct.colliderect(bomb_rct) or tori_rct.colliderect(bomb_rct2):
-            tori_sfc = pg.image.load("fig/6.png")
             tori_sfc = pg.transform.rotozoom(tori_sfc, 0, 2.0)
             tori_rct = tori_sfc.get_rect()
             tori_rct.center = 900, 400
