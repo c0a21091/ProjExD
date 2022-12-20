@@ -1,6 +1,8 @@
 import pygame as pg
 import random
 import sys
+import tkinter as tk
+import tkinter.messagebox as tkm
 
 
 class Screen:
@@ -95,8 +97,7 @@ def main():
         color = colors[i]
         vx = random.choice([-1,+1])
         vy = random.choice([-1,+1])
-        bkd = Bomb(color, 10, (vx, vy), scr)
-        bkd.update(scr)
+        bkd.append(Bomb(color, 10, (vx, vy), scr))
 
     # 練習２
     while True:        
@@ -108,9 +109,15 @@ def main():
 
         kkt.update(scr)
         for bomb in bkd:
-            bkd.update(scr)
-            if kkt.rct.colliderect(bkd.rct):
-                return
+            bomb.update(scr)
+            if kkt.rct.colliderect(bomb.rct):
+                root = tk.Tk()
+                root.withdraw()
+                ret = tkm.showinfo("result", f"耐久時間：{int(pg.time.get_ticks()/1000)}秒\nゲームオーバーです。")
+                if ret == True:
+                    return
+                else:
+                    return
 
         pg.display.update()
         clock.tick(1000)
